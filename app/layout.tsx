@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     description: 'Jelajahi sisi lain Malang yang belum pernah kamu temukan sebelumnya.',
     type: 'website',
   },
+  icons: {
+    icon: "/HaloSam.png",
+  },
+
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
