@@ -17,17 +17,13 @@ export default function Sidebar() {
     <aside className="hidden md:flex fixed left-3 top-3 bottom-3 z-40 w-64 flex-col rounded-2xl glass border border-white/5 shadow-2xl shadow-black/50">
       {/* Logo */}
       <div className="px-6 pt-6 pb-4 border-b border-white/5">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl btn-grad flex items-center justify-center shadow-lg">
-            <span className="material-symbols-outlined text-white text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-              travel_explore
-            </span>
-          </div>
-          <div>
-            <h1 className="font-display text-lg font-bold text-white leading-tight">Halo Sam!</h1>
-            <p className="text-[10px] text-muted uppercase tracking-widest">Malang Tourism</p>
-          </div>
-        </div>
+        <Link href="/" className="block flex justify-center">
+          <img
+            src="HaloSam.png"
+            alt="Halo Sam! Logo"
+            className="h-20 w-auto object-contain drop-shadow-lg"
+          />
+        </Link>
       </div>
 
       {/* Nav */}

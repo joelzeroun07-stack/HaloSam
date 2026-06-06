@@ -1,17 +1,11 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Libre_Baskerville } from 'next/font/google'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const baskerville = Libre_Baskerville({
   subsets: ['latin'],
-  variable: '--font-display',
-  weight: ['400', '600', '700', '800'],
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-body',
-  weight: ['300', '400', '500', '600'],
+  variable: '--font-baskerville',
+  weight: ['400', '700'],
 })
 
 export const metadata: Metadata = {
@@ -35,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
       </head>
-      <body className={`${playfair.variable} ${dmSans.variable} font-body bg-bg text-white antialiased`}>
+      <body className={`${baskerville.variable} font-body bg-bg text-white antialiased`}>
         {children}
       </body>
     </html>

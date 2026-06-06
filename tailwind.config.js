@@ -19,8 +19,8 @@ module.exports = {
         'on-primary': '#003025',
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
-        body: ['var(--font-body)', 'sans-serif'],
+        display: ['var(--font-baskerville)', 'serif'],
+        body: ['var(--font-baskerville)', 'serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',
