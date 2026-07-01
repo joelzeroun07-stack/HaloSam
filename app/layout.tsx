@@ -1,11 +1,19 @@
 import type { Metadata } from 'next'
-import { Libre_Baskerville } from 'next/font/google'
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
+import Providers from '@/components/Providers'
 import './globals.css'
 
-const baskerville = Libre_Baskerville({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-baskerville',
-  weight: ['400', '700'],
+  variable: '--font-jakarta',
+  weight: ['400', '500', '600', '700', '800'],
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  weight: ['400', '500', '600'],
 })
 
 export const metadata: Metadata = {
@@ -21,20 +29,28 @@ export const metadata: Metadata = {
   icons: {
     icon: "/HaloSam.png",
   },
-
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className="dark">
+    <html lang="id" suppressHydrationWarning>
       <head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
       </head>
-      <body className={`${baskerville.variable} font-body bg-bg text-white antialiased`}>
-        {children}
+      <body className={`${jakarta.variable} ${jetbrainsMono.variable} font-body bg-bg antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          storageKey="halosam_theme"
+          enableSystem={false}
+        >
+          <Providers>
+            {children}
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   )
